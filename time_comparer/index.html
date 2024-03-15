@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exposicion tiempo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <p id="title">TIEMPO</p>
+    <p id="TdateChile">cargando</p>
+    <audio id = "tick-tack" src="Claves_1.wav"></audio>
+    <button id="muteButton" class="btn">mute o desmute</button>
+    <p>hour</p>
+    <p id="hourI"></p>
+    <input type="range" min="0" max="100" value="1" class="slider" id="hour">
+    <p>min</p>
+    <p id="minI"></p>
+    <input type="range" min="0" max="100" value="1" class="slider" id="min">
+    <p>sec</p>
+    <p id="secI"></p>
+    <input type="range" min="0" max="100" value="1" class="slider" id="sec">
+    <p>minC</p>
+    <p id="minCI"></p>
+    <input type="range" min="0" max="100" value="60" class="slider" id="minC">
+    <p>secC</p>
+    <p id="secCI"></p>
+    <input type="range" min="0" max="100" value="60" class="slider" id="secC">
+    <p>vel</p>
+    <p id="velI"></p>
+    <input type="range" min="0" max="100000" value="1000" class="slider" id="vel">
+    <script src="script.js"></script>
+</body>
+</html>
