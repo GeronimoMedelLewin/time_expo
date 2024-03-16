@@ -1,5 +1,5 @@
 const TdateChile = document.getElementById("TdateChile");
-const Shour = document.getElementById("hour");
+/*const Shour = document.getElementById("hour");
 const Smin = document.getElementById("min");
 const Ssec = document.getElementById("sec");
 const SminC = document.getElementById("minC");
@@ -12,6 +12,7 @@ const SsecI = document.getElementById("secI");
 const SminCI = document.getElementById("minCI");
 const SsecCI = document.getElementById("secCI");
 const velI = document.getElementById("velI");
+*/
 
 const Bmute = document.getElementById("muteButton");
 const tickTack = document.getElementById("tick-tack");
@@ -38,19 +39,20 @@ function updateMbutton(){
 };
 
 setInterval(() => {
-    ShourI.textContent = Shour.value;
+    /*ShourI.textContent = Shour.value;
     SminI.textContent = Smin.value;
     SsecI.textContent = Ssec.value;
     SminCI.textContent = SminC.value;
     SsecCI.textContent = SsecC.value;
     velI.textContent = vel.value;
-    count = count + parseInt(Ssec.value);
-    if (count >= parseInt(SsecC.value)) {
-        min = min + parseInt(Smin.value);
+    */
+    count = count + /*parseInt(Ssec.value)*/ 1;
+    if (count >= /*parseInt(SsecC.value)*/ 60) {
+        min = min + /*parseInt(Smin.value)*/1;
         count = 0;
     }
-    if (min >= parseInt(SminC.value)) {
-        hor = hor + parseInt(Shour.value);
+    if (min >= /*parseInt(SminC.value)*/60) {
+        hor = hor + /*parseInt(Shour.value)*/1;
         min = 0;
     }
     TdateChile.textContent = `${String(hor).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(count).padStart(2, '0')}`;
