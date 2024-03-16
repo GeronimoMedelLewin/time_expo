@@ -58,12 +58,14 @@ setInterval(() => {
     TdateChile.textContent = `${String(hor).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(count).padStart(2, '0')}`;
     Bmute.onclick = function() {
         if (!BmuteIsActive) {
-            tickTack.play();
             tickTack.muted = false;
             BmuteIsActive = true;
         } else {
             tickTack.muted = true;
             BmuteIsActive = false;
         }
+    }
+    if (BmuteIsActive) {
+        tickTack.play();
     }
 }, 990);
