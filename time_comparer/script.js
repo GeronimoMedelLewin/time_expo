@@ -17,6 +17,8 @@ const velI = document.getElementById("velI");
 const Bmute = document.getElementById("muteButton");
 const tickTack = document.getElementById("tick-tack");
 
+const mensaje = document.getElementById("text");
+
 const now = new Date();
 var min = now.getMinutes();
 var hor = now.getHours();
@@ -25,6 +27,14 @@ var count = now.getSeconds();
 var BmuteIsActive = false;
 
 tickTack.muted = true;
+
+let guion = ["Esta obra te robará un poco de tu tiempo. Y para esto toma el tiemo de tu ordenador o movil. Compara ambos tiempos.", 
+"Piensa que todo lo que sucede en tu vida transcurre en un espacio de tiempo.", "¿Pero el tiempo existe?", "El tiempo es relativo", "A. Einstein", "sdñjkdsñflkg", 
+"odisjfpgoijsdfogi", "adfáokfñsldkf", "El tiempo solo existe si lo dejas existir. El tiempo transcurre según como tu quieras que transcurra.", "Compara otra vez tus ambos tiempos", 
+"Disculpa por robarte un pedazo de tu tiempo."];
+var Dnumber = 0;
+
+mensaje.textContent = guion[Dnumber];
 
 window.addEventListener('resize', updateMbutton);
 document.addEventListener('DOMContentLoaded', updateMbutton);
@@ -69,3 +79,11 @@ setInterval(() => {
         tickTack.play();
     }
 }, 990);
+mensaje.onclick = function() {
+    mensaje.textContent = guion[Dnumber];
+    if (Dnumber < guion.length) {
+        Dnumber = Dnumber + 1;
+    } else if (Dnumber === guion.length) {
+        console.log("End.");
+    }
+}
