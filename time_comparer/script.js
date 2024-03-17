@@ -14,8 +14,9 @@ const SsecCI = document.getElementById("secCI");
 const velI = document.getElementById("velI");
 */
 
-// const Bmute = document.getElementById("muteButton");
+const Bmute = document.getElementById("muteButton");
 const tickTack = document.getElementById("tick-tack");
+const tickTack2 = document.getElementById("tick-tack2");
 
 const mensaje = document.getElementById("text");
 
@@ -24,9 +25,10 @@ var min = now.getMinutes();
 var hor = now.getHours();
 var count = now.getSeconds();
 
-var BmuteIsActive = true;
+var BmuteIsActive = false;
+var tickORtack = false;
 
-tickTack.muted = false;
+tickTack.muted = true;
 
 let guion = ["Esta obra te robará un poco de tu tiempo. Y para esto toma el tiemo de tu ordenador o movil. Compara ambos tiempos.", 
 "Piensa que todo lo que sucede en tu vida transcurre en un espacio de tiempo.", "¿Pero el tiempo existe?", '"El tiempo es relativo"\nA. Einstein', "sdñjkdsñflkg", 
@@ -71,17 +73,28 @@ setInterval(() => {
         min = 0;
     }
     TdateChile.textContent = `${String(hor).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(count).padStart(2, '0')}`;
-    /* Bmute.onclick = function() {
+    Bmute.onclick = function() {
         if (!BmuteIsActive) {
             tickTack.muted = false;
+            tickTack2.muted = false;
             BmuteIsActive = true;
         } else {
             tickTack.muted = true;
+            tickTack2.muted = true;
             BmuteIsActive = false;
         }
-    }*/ 
+    } 
     if (BmuteIsActive) {
-        tickTack.play();
+        if (tickORtack) {
+            tickTack.play();
+        } else {
+            tickTack2.play();
+        }
+    }
+    if(!tickORtack){
+        tickORtack = true;
+    } else {
+        tickORtack = false;
     }
 }, 800);
 setInterval(() => {
