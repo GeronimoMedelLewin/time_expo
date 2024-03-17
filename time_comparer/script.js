@@ -14,7 +14,7 @@ const SsecCI = document.getElementById("secCI");
 const velI = document.getElementById("velI");
 */
 
-const Bmute = document.getElementById("muteButton");
+// const Bmute = document.getElementById("muteButton");
 const tickTack = document.getElementById("tick-tack");
 
 const mensaje = document.getElementById("text");
@@ -24,15 +24,20 @@ var min = now.getMinutes();
 var hor = now.getHours();
 var count = now.getSeconds();
 
-var BmuteIsActive = false;
+var BmuteIsActive = true;
 
-tickTack.muted = true;
+tickTack.muted = false;
 
 let guion = ["Esta obra te robará un poco de tu tiempo. Y para esto toma el tiemo de tu ordenador o movil. Compara ambos tiempos.", 
-"Piensa que todo lo que sucede en tu vida transcurre en un espacio de tiempo.", "¿Pero el tiempo existe?", "El tiempo es relativo", "A. Einstein", "sdñjkdsñflkg", 
+"Piensa que todo lo que sucede en tu vida transcurre en un espacio de tiempo.", "¿Pero el tiempo existe?", '"El tiempo es relativo"\nA. Einstein', "sdñjkdsñflkg", 
 "odisjfpgoijsdfogi", "adfáokfñsldkf", "El tiempo solo existe si lo dejas existir. El tiempo transcurre según como tu quieras que transcurra.", "Compara otra vez tus ambos tiempos", 
 "Disculpa por robarte un pedazo de tu tiempo."];
+let Tguion = [10000, 
+20000, 10000, 10000, 10000, 
+10000, 10000, 30000, 20000, 
+30000];
 var Dnumber = 0;
+var DTnumber = 0;
 
 mensaje.textContent = guion[Dnumber];
 
@@ -66,7 +71,7 @@ setInterval(() => {
         min = 0;
     }
     TdateChile.textContent = `${String(hor).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(count).padStart(2, '0')}`;
-    Bmute.onclick = function() {
+    /* Bmute.onclick = function() {
         if (!BmuteIsActive) {
             tickTack.muted = false;
             BmuteIsActive = true;
@@ -74,16 +79,17 @@ setInterval(() => {
             tickTack.muted = true;
             BmuteIsActive = false;
         }
-    }
+    }*/ 
     if (BmuteIsActive) {
         tickTack.play();
     }
-}, 990);
-mensaje.onclick = function() {
+}, 800);
+setInterval(() => {
     mensaje.textContent = guion[Dnumber];
     if (Dnumber < guion.length) {
         Dnumber = Dnumber + 1;
+        DTnumber = DTnumber + 1;
     } else if (Dnumber === guion.length) {
         console.log("End.");
     }
-}
+}, Tguion[DTnumber]);
