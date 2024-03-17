@@ -19,6 +19,7 @@ const tickTack = document.getElementById("tick-tack");
 const tickTack2 = document.getElementById("tick-tack2");
 
 const mensaje = document.getElementById("text");
+const Acita = document.getElementById("Acita");
 
 const now = new Date();
 var min = now.getMinutes();
@@ -31,9 +32,11 @@ var tickORtack = false;
 tickTack.muted = true;
 
 let guion = ["Esta obra te robará un poco de tu tiempo. Y para esto toma el tiemo de tu ordenador o movil. Compara ambos tiempos.", 
-"Piensa que todo lo que sucede en tu vida transcurre en un espacio de tiempo.", "¿Pero el tiempo existe?", '"El tiempo es relativo"\nA. Einstein', "sdñjkdsñflkg", 
+"Piensa que todo lo que sucede en tu vida transcurre en un espacio de tiempo.", "¿Pero el tiempo existe?", '"El tiempo es relativo"', "sdñjkdsñflkg", 
 "odisjfpgoijsdfogi", "adfáokfñsldkf", "El tiempo solo existe si lo dejas existir. El tiempo transcurre según como tu quieras que transcurra.", "Compara otra vez tus ambos tiempos", 
 "Disculpa por robarte un pedazo de tu tiempo."];
+let Cguion = ["A. Einstein", "idosf", "Waripolo", "Tata Maradona"];
+let CPguion = [4, 5, 6, 7];
 let Tguion = [10000, 
 20000, 10000, 10000, 10000, 
 10000, 10000, 30000, 20000, 
@@ -99,6 +102,11 @@ setInterval(() => {
 }, 800);
 setInterval(() => {
     mensaje.textContent = guion[Dnumber];
+    if (CPguion.some(item => typeof item === 'number' && item === Dnumber + 1)) {
+        Acita.textContent = Cguion[CPguion.findIndex(item => typeof item === 'number' && item === Dnumber + 1)];
+    } else {
+        Acita.textContent = "";
+    }
     if (Dnumber < guion.length) {
         Dnumber = Dnumber + 1;
         DTnumber = DTnumber + 1;
