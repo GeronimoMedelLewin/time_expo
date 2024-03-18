@@ -4,31 +4,39 @@ body {
     /* color: aliceblue; */
 }
 
-#title{
+/*#title{
     color: white;
     font-weight: bolder;
     font-size: 5vh;
     text-align: center;
-}
+}*/
 
 #TdateChile {
     color: red;
-    font-size: 10vw;
+    font-size: 11vw;
     text-align: center;
+    position: relative;
+    top: -90px;
 }
 
 #text {
     color: white;
     font-size: 3vh;
     text-align: center;
+    animation: JumpDown 0.5s forwards;
+    animation-timing-function: ease-out;
+    position: absolute;
+    top: 2vh;
+    left: 15vw;
+    width: 12vw;
 }
 
-#Acita {
+/*#Acita {
     color: white;
     font-size: 2.5vh;
     position: absolute;
     right: 18vw;
-}
+}*/
 
 .btn {
     position: absolute;
@@ -41,4 +49,24 @@ body {
     z-index: 1; /* Para que esté por encima del texto */
     width: auto;
     height: auto;
+}
+
+@keyframes JumpDown {
+    0% {
+        transform: translateY(-200%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes JumpTop {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-200%);
+    }
 }

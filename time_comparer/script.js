@@ -19,7 +19,7 @@ const tickTack = document.getElementById("tick-tack");
 const tickTack2 = document.getElementById("tick-tack2");
 
 const mensaje = document.getElementById("text");
-const Acita = document.getElementById("Acita");
+// const Acita = document.getElementById("Acita");
 
 const now = new Date();
 var min = now.getMinutes();
@@ -31,7 +31,7 @@ var tickORtack = false;
 
 tickTack.muted = true;
 
-let guion = ["Esta obra te robará un poco de tu tiempo. Y para esto toma el tiemo de tu ordenador o movil. Compara ambos tiempos.", 
+/*let guion = ["Esta obra te robará un poco de tu tiempo. Y para esto toma el tiemo de tu ordenador o movil. Compara ambos tiempos.", 
 "Piensa que todo lo que sucede en tu vida transcurre en un espacio de tiempo.", "¿Pero el tiempo existe?", 
 '"La distinción entre el pasado, el presente y el futuro es solo una ilusión obstinadamente persistente"', 
 "El tiempo humano no gira en forma circular. Corre hacia adelante en una línea recta. Es por esto que las personas no pueden ser felices: la felicidad busca la repetición", 
@@ -47,7 +47,7 @@ let Tguion = [7000,
 var Dnumber = 0;
 var DTnumber = 0;
 
-mensaje.textContent = guion[Dnumber];
+mensaje.textContent = guion[Dnumber];*/
 
 window.addEventListener('resize', updateMbutton);
 document.addEventListener('DOMContentLoaded', updateMbutton);
@@ -59,6 +59,13 @@ function updateMbutton(){
     Bmute.style.left = (pRect.left + window.scrollX) + "px";
     Bmute.style.width = pRect.width + "px";
     Bmute.style.height = pRect.height + "px";
+};
+
+window.onload = function() {
+    mensaje.classList.add("JumpDown");
+    setTimeout(() => {
+        mensaje.classList.remove("JumpDown");
+    }, 500);
 };
 
 setInterval(() => {
@@ -89,6 +96,10 @@ setInterval(() => {
             tickTack2.muted = true;
             BmuteIsActive = false;
         }
+        mensaje.style.animation = "JumpTop";
+        mensaje.style.animationFillMode = "forwards";
+        mensaje.style.animationDuration = "0.5s";
+        mensaje.style.animationTimingFunction = "easy-in";
     } 
     if (BmuteIsActive) {
         if (tickORtack) {
@@ -103,7 +114,7 @@ setInterval(() => {
         tickORtack = false;
     }
 }, 800);
-setInterval(() => {
+/* setInterval(() => {
     mensaje.textContent = guion[Dnumber];
     if (CPguion.some(item => typeof item === 'number' && item === Dnumber + 1)) {
         Acita.textContent = Cguion[CPguion.findIndex(item => typeof item === 'number' && item === Dnumber + 1)];
@@ -116,4 +127,4 @@ setInterval(() => {
     } else if (Dnumber === guion.length) {
         console.log("End.");
     }
-}, Tguion[DTnumber]);
+}, Tguion[DTnumber]);*/
