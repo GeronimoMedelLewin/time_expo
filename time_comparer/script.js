@@ -36,13 +36,13 @@ let guion = ["Esta obra te robará un poco de tu tiempo. Y para esto toma el tie
 '"La distinción entre el pasado, el presente y el futuro es solo una ilusión obstinadamente persistente"', 
 "El tiempo humano no gira en forma circular. Corre hacia adelante en una línea recta. Es por esto que las personas no pueden ser felices: la felicidad busca la repetición", 
 "Por esta razón, su autor se preocupó de hacer una especie de imitación móvil de la eternidad y, mientras organizaba el cielo, hizo, a semejanza de la eternidad inmóvil y una, esta imagen eterna que progresa según las leyes de los Números, esto que nosotros llamamos el Tiempo", 
-"Escoger el propio tiempo es ganar tiempo", "El tiempo solo existe si lo dejas existir. El tiempo transcurre según como tu quieras que transcurra.", "Compara otra vez tus ambos tiempos", 
+"Escoger el propio tiempo es ganar tiempo", "Compara otra vez el reloj de tu dispositivo con el de la pagina", 
 "Disculpa por robarte un pedazo de tu tiempo."];
 let Cguion = ["Albert Einstein", "Milan Kundera", "Platon", "Sir Francis Bacon"];
 let CPguion = [4, 5, 6, 7];
-let Tguion = [10000, 
-20000, 10000, 10000, 10000, 
-10000, 10000, 30000, 20000, 
+let Tguion = [7000, 
+20000, 10000, 15000, 25000, 
+1, 10000, 20000, 
 30000];
 var Dnumber = 0;
 var DTnumber = 0;
