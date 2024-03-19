@@ -19,7 +19,11 @@ const tickTack = document.getElementById("tick-tack");
 const tickTack2 = document.getElementById("tick-tack2");
 
 const mensaje = document.getElementById("text");
-// const Acita = document.getElementById("Acita");
+const Guion = document.getElementById("Guion");
+const mensaje2 = document.getElementById("text2");
+const Acita = document.getElementById("Acita");
+
+// const videoGuion = document.getElementById("Gvideo");
 
 const now = new Date();
 var min = now.getMinutes();
@@ -31,23 +35,42 @@ var tickORtack = false;
 
 tickTack.muted = true;
 
-/*let guion = ["Esta obra te robará un poco de tu tiempo. Y para esto toma el tiemo de tu ordenador o movil. Compara ambos tiempos.", 
-"Piensa que todo lo que sucede en tu vida transcurre en un espacio de tiempo.", "¿Pero el tiempo existe?", 
+let guion = ["¿Existe el Tiempo?", 
+"Esta experiencia tomará un poco de tu tiempo.", "Y para esto toma la hora del Sistema Operativo de tu ordenador o móvil.", "Compara ambas horas", 
 '"La distinción entre el pasado, el presente y el futuro es solo una ilusión obstinadamente persistente"', 
 "El tiempo humano no gira en forma circular. Corre hacia adelante en una línea recta. Es por esto que las personas no pueden ser felices: la felicidad busca la repetición", 
 "Por esta razón, su autor se preocupó de hacer una especie de imitación móvil de la eternidad y, mientras organizaba el cielo, hizo, a semejanza de la eternidad inmóvil y una, esta imagen eterna que progresa según las leyes de los Números, esto que nosotros llamamos el Tiempo", 
-"Escoger el propio tiempo es ganar tiempo", "Compara otra vez el reloj de tu dispositivo con el de la pagina", 
-"Disculpa por robarte un pedazo de tu tiempo."];
+"Escoger el propio tiempo es ganar tiempo", "Compara otra vez ambos relojes", 
+"Fracción de Tiempo"];
 let Cguion = ["Albert Einstein", "Milan Kundera", "Platon", "Sir Francis Bacon"];
-let CPguion = [4, 5, 6, 7];
-let Tguion = [7000, 
-20000, 10000, 15000, 25000, 
-1, 10000, 20000, 
-30000];
-var Dnumber = 0;
-var DTnumber = 0;
+let CPguion = [5, 6, 7, 8];
+let Tguion = [5000, 10000, 
+10000, 5000, 10000, 20000, 
+30000, 5000, 5000, 10000];
+// var Dnumber = 0;
+// var DTnumber = 0;
 
-mensaje.textContent = guion[Dnumber];*/
+// Guion.textContent = guion[Dnumber];
+
+let currentTextIndex = 0;
+
+function showText() {
+  if (currentTextIndex < guion.length) {
+    Guion.textContent = guion[currentTextIndex];
+
+    if (CPguion.includes(currentTextIndex + 1)) {
+      let index = CPguion.findIndex(item => item === currentTextIndex + 1);
+      Acita.textContent = Cguion[index];
+    } else {
+      Acita.textContent = "";
+    }
+
+    setTimeout(() => {
+      currentTextIndex++;
+      showText();
+    }, Tguion[currentTextIndex]);
+  }
+}
 
 window.addEventListener('resize', updateMbutton);
 document.addEventListener('DOMContentLoaded', updateMbutton);
@@ -66,6 +89,13 @@ window.onload = function() {
     setTimeout(() => {
         mensaje.classList.remove("JumpDown");
     }, 500);
+    /*if (window.innerWidth > window.innerHeight) {
+        mensaje2.textContent = "Manten tu celular horizontal";
+        mensaje2.classList.add("JumpDown");
+        setTimeout(() => {
+            mensaje.classList.remove("JumpDown");
+        }, 500);
+    }*/
 };
 
 setInterval(() => {
@@ -100,6 +130,8 @@ setInterval(() => {
         mensaje.style.animationFillMode = "forwards";
         mensaje.style.animationDuration = "0.5s";
         mensaje.style.animationTimingFunction = "easy-in";
+        // videoGuion.play();
+        showText();
     } 
     if (BmuteIsActive) {
         if (tickORtack) {
@@ -115,7 +147,7 @@ setInterval(() => {
     }
 }, 800);
 /* setInterval(() => {
-    mensaje.textContent = guion[Dnumber];
+    Guion.textContent = guion[Dnumber];
     if (CPguion.some(item => typeof item === 'number' && item === Dnumber + 1)) {
         Acita.textContent = Cguion[CPguion.findIndex(item => typeof item === 'number' && item === Dnumber + 1)];
     } else {

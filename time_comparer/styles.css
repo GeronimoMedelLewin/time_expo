@@ -16,7 +16,7 @@ body {
     font-size: 11vw;
     text-align: center;
     position: relative;
-    top: -90px;
+    top: -4vh;
 }
 
 #text {
@@ -31,12 +31,18 @@ body {
     width: 12vw;
 }
 
-/*#Acita {
+#Guion {
+    color: white;
+    font-size: 3vh;
+    text-align: center;
+}
+
+#Acita {
     color: white;
     font-size: 2.5vh;
     position: absolute;
     right: 18vw;
-}*/
+}
 
 .btn {
     position: absolute;
@@ -50,6 +56,13 @@ body {
     width: auto;
     height: auto;
 }
+
+/*#Gvideo {
+    position: relative;
+    top: -25vh;
+    width: 67vw;
+    left: 17vw;
+}*/
 
 @keyframes JumpDown {
     0% {
