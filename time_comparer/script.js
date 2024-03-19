@@ -146,7 +146,7 @@ setInterval(() => {
     } else {
         tickORtack = false;
     }
-}, 800);
+}, 750);
 /* setInterval(() => {
     Guion.textContent = guion[Dnumber];
     if (CPguion.some(item => typeof item === 'number' && item === Dnumber + 1)) {
