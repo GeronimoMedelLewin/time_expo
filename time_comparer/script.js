@@ -85,10 +85,10 @@ function updateMbutton(){
 };
 
 window.onload = function() {
-    mensaje.classList.add("JumpDown");
+    /*mensaje.classList.add("JumpDown");
     setTimeout(() => {
         mensaje.classList.remove("JumpDown");
-    }, 500);
+    }, 500);*/
     /*if (window.innerWidth > window.innerHeight) {
         mensaje2.textContent = "Manten tu celular horizontal";
         mensaje2.classList.add("JumpDown");
@@ -126,10 +126,11 @@ setInterval(() => {
             tickTack2.muted = true;
             BmuteIsActive = false;
         }
-        mensaje.style.animation = "JumpTop";
+        /* mensaje.style.animation = "JumpTop";
         mensaje.style.animationFillMode = "forwards";
         mensaje.style.animationDuration = "0.5s";
-        mensaje.style.animationTimingFunction = "easy-in";
+        mensaje.style.animationTimingFunction = "easy-in";*/
+        mensaje.textContent = "";
         // videoGuion.play();
         showText();
     } 

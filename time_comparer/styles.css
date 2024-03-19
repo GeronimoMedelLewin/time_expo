@@ -20,15 +20,14 @@ body {
 }
 
 #text {
+    /* animation: JumpDown 0.5s forwards;
+    animation-timing-function: ease-out; */
     color: white;
     font-size: 3vh;
     text-align: center;
-    animation: JumpDown 0.5s forwards;
-    animation-timing-function: ease-out;
     position: absolute;
-    top: 2vh;
-    left: 15vw;
-    width: 12vw;
+    top: 9vh;
+    left: 3vw;
 }
 
 #Guion {
@@ -64,7 +63,7 @@ body {
     left: 17vw;
 }*/
 
-@keyframes JumpDown {
+/* @keyframes JumpDown {
     0% {
         transform: translateY(-200%);
     }
@@ -82,4 +81,4 @@ body {
     100% {
         transform: translateY(-200%);
     }
-}
+}*/
