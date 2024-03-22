@@ -172,7 +172,7 @@ Bmute.onclick = function() {
                 mensaje.textContent = "Cargando...";
             } else {
                 if (count >= 30 && count <= 50) {
-                    velR = 1500;
+                    velR = 1100;
                 }
                 if (!brakeT){
                     mensaje.textContent = "";
