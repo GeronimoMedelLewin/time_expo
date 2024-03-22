@@ -37,6 +37,7 @@ var count = 0;
         min = now.getMinutes();
         hor = now.getHours();
         count = now.getSeconds();
+        refreshClock();
 /*    }
 }*/
 
@@ -112,40 +113,43 @@ window.onload = function() {
     }*/
 };
 
-setInterval(() => {
-    // if (currentTextIndex >= 2) {
-        // console.log("Hola Mundo!");
-        /*ShourI.textContent = Shour.value;
-        SminI.textContent = Smin.value;
-        SsecI.textContent = Ssec.value;
-        SminCI.textContent = SminC.value;
-        SsecCI.textContent = SsecC.value;
-        velI.textContent = vel.value;
-        */
-        count = count + /*parseInt(Ssec.value)*/ 1;
-        if (count >= /*parseInt(SsecC.value)*/ 60) {
-            min = min + /*parseInt(Smin.value)*/1;
-        count = 0;
-        }
-        if (min >= /*parseInt(SminC.value)*/60) {
-            hor = hor + /*parseInt(Shour.value)*/1;
-            min = 0;
-        }
-        TdateChile.textContent = `${String(hor).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(count).padStart(2, '0')}`;
-        if (BmuteIsActive) {
-            if (tickORtack) {
-                tickTack.play();
-            } else {
-                tickTack2.play();
+function refreshClock() {
+    setTimeout(() => {
+        // if (currentTextIndex >= 2) {
+            // console.log("Hola Mundo!");
+            /*ShourI.textContent = Shour.value;
+            SminI.textContent = Smin.value;
+            SsecI.textContent = Ssec.value;
+            SminCI.textContent = SminC.value;
+            SsecCI.textContent = SsecC.value;
+            velI.textContent = vel.value;
+            */
+            count = count + /*parseInt(Ssec.value)*/ 1;
+            if (count >= /*parseInt(SsecC.value)*/ 60) {
+                min = min + /*parseInt(Smin.value)*/1;
+            count = 0;
             }
-        }
-        if(!tickORtack){
-            tickORtack = true;
-        } else {
-            tickORtack = false;
-        }
-    // }
-}, velR);
+            if (min >= /*parseInt(SminC.value)*/60) {
+                hor = hor + /*parseInt(Shour.value)*/1;
+                min = 0;
+            }
+            TdateChile.textContent = `${String(hor).padStart(2, '0')}:${String(min).padStart(2, '0')}:${String(count).padStart(2, '0')}`;
+            if (BmuteIsActive) {
+                if (tickORtack) {
+                    tickTack.play();
+                } else {
+                    tickTack2.play();
+                }
+            }
+            if(!tickORtack){
+                tickORtack = true;
+            } else {
+                tickORtack = false;
+            }
+            refreshClock();
+        // }
+    }, velR);
+}
 Bmute.onclick = function() {
     if (!BmuteIsActive) {
         tickTack.muted = false;
@@ -168,7 +172,7 @@ Bmute.onclick = function() {
                 mensaje.textContent = "Cargando...";
             } else {
                 if (count >= 30 && count <= 50) {
-                    velR = 100700;
+                    velR = 1500;
                 }
                 if (!brakeT){
                     mensaje.textContent = "";
